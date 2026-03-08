@@ -4,4 +4,3 @@ class Despesa:
         self.categoria = categoria
         self.descricao = descricao
         self.data = data
-        

@@ -27,3 +27,11 @@ def listar_despesas():
     conn.close()
 
     return despesas
+
+def excluir_despesa(despesa_id):
+    conn = conectar()
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM despesas WHERE id = ?", (despesa_id,))
+    conn.commit()
+    conn.close()
+

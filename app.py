@@ -1,5 +1,5 @@
 from database import criar_tabela 
-from services import adicionar_despesa, listar_despesas
+from services import adicionar_despesa, listar_despesas, excluir_despesa
 
 criar_tabela()
 
@@ -9,7 +9,8 @@ def menu():
         print("\n=== CONTROLE DE DESPESAS ===")
         print("1 - Adicionar despesa")
         print("2 - Listar despesas")
-        print("3 - Sair")
+        print("3 - Excluir despesa")
+        print("4 - Sair")
 
         opcao = input("Escolha: ")
 
@@ -29,6 +30,12 @@ def menu():
 
             for d in despesas:
                 print(d)
+
         elif opcao == "3":
+            id_despesa = int(input("ID da despesa a excluir: "))
+            excluir_despesa(id_despesa)
+            print("Despesa excluída!")
+                    
+        elif opcao == "4":
             break
 menu()
